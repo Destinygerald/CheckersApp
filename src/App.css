@@ -1,0 +1,135 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /*font-family: ;*/
+  color: rgb(0, 0, 0, .7);
+}
+
+#root {
+  /*min-width: 600px;*/
+  margin: 0 auto;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+}
+
+.app {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  justify-content: center;
+  padding-top: 32px;
+  gap: 1.4rem;
+  position: relative;
+}
+
+.comments {
+  font-size: .8rem;
+  font-weight: 600;
+  position: absolute;
+  background-color: white;
+  padding: 16px 12px;
+  border-radius: 6px;
+  right: 0;
+  top: 0;
+  translate: -10% 10%;
+  box-shadow: 0 1px 2px rgb(0, 0, 0, .3);
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  gap: 0px;
+  border: 12px solid rgb(20, 20, 20);
+  border-radius: 4px;
+  max-height: 480px;
+  box-sizing: content-box;
+  box-shadow: 0 0 6px rgb(0, 0, 0);
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+}
+
+.cell:hover > .piece {
+  cursor: pointer;
+}
+
+.cell:hover > .op-piece {
+  cursor: pointer;
+}
+
+.dark {
+  background-color: rgb(80, 20, 20);
+}
+
+.active {
+  background-color: rgb(0, 0, 0, .5);
+}
+
+.selected-cell {
+  background-color: rgb(0, 0, 0, .8);
+}
+
+.possible-move {
+  background-color: rgb(0, 250, 100, .8);
+}
+
+.killable {
+  background-color: orangered;
+}
+
+.piece {
+  width: 38px;
+  height: 38px;
+  border-radius: 20px;
+  /*box-shadow: 0px 0px 3px white;*/
+  filter: drop-shadow(2px 1px);
+  background-color: rgb(220, 220, 220);
+  /*z-index: 2;*/
+  position: relative;
+}
+
+
+.op-piece {
+  background-color: rgb(20, 20, 20);
+}
+
+
+@media (width < 600px) {
+
+  .app {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game-board {
+    max-height: 240px;
+    grid-template-columns: repeat(8, 30px);
+    grid-template-rows: repeat(8, 30px);
+    border: 8px solid rgb(20, 20, 20);
+  }
+
+  .cell {
+    width: 30px;
+    height: 30px;
+  }
+
+  .piece {
+    width: 20px;
+    height: 20px;
+  }
+
+  .comments {
+    font-size: .6rem;
+    padding: 10px 12px;
+    box-shadow: 0 1px 1px rgb(0, 0, 0, .3);
+  }
+}
