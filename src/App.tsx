@@ -4,11 +4,10 @@ import GameBoard from './Components/GameBoard';
 import { CommentContextFunction } from "./Context/CommentContext"
 import { io } from "socket.io-client"
 
-export const socket = io("http://localhost:7000")
-
+export const socket = io("https://checkersbackend.onrender.com")
 const App = () => {
 
-  const [ cellSelected, setCellSelected ] = useState<bool>(false);
+  const [ cellSelected, setCellSelected ] = useState<boolean>(false);
 
   const { currentPlayer, switchPlayer } = CommentContextFunction();
   // const [ player, setPlayer ] = useState<string>()
