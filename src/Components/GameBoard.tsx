@@ -5,7 +5,7 @@ import { drawBoard } from "../Static/Functions"
 
 const GameBoard = () => {
 
-  const [ readyToMove, setReadyToMove ] = useState<bool>(false)
+  const [ readyToMove, setReadyToMove ] = useState<boolean>(false)
   const cellSelected = useRef<number>();
   const [ pieceSelected, setPieceSelected ] = useState<string>()
   const personToPlay = useRef("White")
